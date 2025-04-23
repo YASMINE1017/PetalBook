@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetalBook - 花卉成长记录</title>
+</head>
+<body>
+    <h1>欢迎来到 PetalBook</h1>
+    <p>这是你的花卉成长记录。</p>
+    <a href="{{ url_for('upload') }}">上传新图片</a>
+    <div>
+        <h2>花卉照片：</h2>
+        {% for image in image_files %}
+            <img src="{{ url_for('static', filename='photos/' + image) }}" alt="flower photo" width="200">
+        {% endfor %}
+    </div>
+</body>
+</html>
